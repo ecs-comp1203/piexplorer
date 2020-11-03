@@ -1,22 +1,15 @@
 #!/usr/bin/env python3
-
+# adapted from Pimoroni example
 import time
-import explorerhat
-touched = [False] * 8
+import explorerhat as hat
 
-
-def ohai(channel, event):
-    touched[channel - 1] = True
+def touch_cb(channel, event):
     print("{}: {}".format(channel, event))
 
-# what to call if ainputs are touched
-explorerhat.touch.pressed(ohai)
-explorerhat.touch.released(ohai)
-
-input_status = False
-
+# what to call if inputs are touched
+hat.touch.pressed(touch_cb)
+hat.touch.released(touch_cb)
+# endless loop - let callbacks do the tasks
 while True:
     print("waiting")
     time.sleep(2)
-
-explorerhat.pause()
