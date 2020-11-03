@@ -12,5 +12,5 @@ while True:
         hat.light.green.on()
     else:
         hat.light.green.off()
-    print(level)
+    print(v)
     time.sleep(0.25)
