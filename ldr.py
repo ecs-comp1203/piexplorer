@@ -6,7 +6,7 @@
 import time
 import explorerhat as hat
 threshold = 3.3
-fixed_resistor = 11  # kΩ
+fixed_resistor = 8.2  # kΩ
 while True:
     v = hat.analog.one.read()
     if v < threshold:
