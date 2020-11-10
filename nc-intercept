@@ -1,0 +1,6 @@
+# listen to port 8081 and pass packets to port 8080
+# also prints out the packets
+# this means you can see what is being sent from your web server
+# You must set web browser to http://piipaddress:8088
+nc -l 8088 | nc localhost 8080
+
