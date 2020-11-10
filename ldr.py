@@ -13,6 +13,6 @@ while True:
         hat.light.green.on()
     else:
         hat.light.green.off()
-    print("P.D. across LDR: %sV" % round(5 - v, 3))
+    print("Voltage across LDR: %sV" % round(5 - v, 3))
     print("LDR resistance: %skΩ" % round(fixed_resistor * (5 - v) / v, 2))
     time.sleep(0.25)
