@@ -6,6 +6,7 @@
 import time
 import explorerhat as hat
 threshold = 3.3
+fixed_resistor = 11  # kΩ
 while True:
     v = hat.analog.one.read()
     if v < threshold:
@@ -13,5 +14,5 @@ while True:
     else:
         hat.light.green.off()
     print("P.D. across LDR: %sV" % round(5 - v, 3))
-    print("LDR resistance: %skΩ" % round(11 * (5 - v) / v, 2))
+    print("LDR resistance: %skΩ" % round(fixed_resistor * (5 - v) / v, 2))
     time.sleep(0.25)
