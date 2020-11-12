@@ -3,7 +3,6 @@
 
 import time
 import RPi.GPIO as GPIO
-import time
 pin = 4
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
