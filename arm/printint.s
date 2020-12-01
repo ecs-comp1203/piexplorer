@@ -10,7 +10,7 @@
 	.extern printf
 
 main:
-push {ip, lr}
+push {ip, lr}			@ save link register as we will re-use it here
 	@ our code here
 	ldr r1, =1000000
 	mov r0, #2
@@ -21,6 +21,6 @@ push {ip, lr}
 	ldr r0, =fmtstring
 	bl printf
 
-pop {ip, pc}
+pop {ip, pc}			@ get original values for return to shell
 
 adr_num: .word num
