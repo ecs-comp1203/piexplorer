@@ -4,7 +4,6 @@
 .data
         .balign  4
 	fmtstring: .asciz "%d\n"
-	num: .int 0
 .text
         .global main
 	.extern printf
@@ -22,5 +21,3 @@ push {ip, lr}			@ save link register as we will re-use it here
 	bl printf
 
 pop {ip, pc}			@ get original values for return to shell
-
-adr_num: .word num
