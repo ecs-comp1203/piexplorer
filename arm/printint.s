@@ -16,7 +16,7 @@ push {ip, lr}			@ save link register as we will re-use it here
 	mov r0, #2
         mul     r0, r0, r1
 
-	@ print the result
+	@ print the result that we have stored in r0
 	mov r1, r0		
 	ldr r0, =fmtstring
 	bl printf
