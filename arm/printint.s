@@ -20,4 +20,5 @@ push {ip, lr}			@ save link register as we will re-use it here
 	ldr r0, =fmtstring
 	bl printf
 
-pop {ip, pc}			@ get original values for return to shell
+pop {ip, lr}			@ get original values for return to shell
+bx lr
