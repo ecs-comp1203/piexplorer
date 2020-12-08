@@ -9,7 +9,7 @@
 	.extern printf
 
 main:
-push {ip, lr}			@ save link register as we will re-use it here
+push {lr}			@ save link register as we will re-use it here
 	@ our code here
 	ldr r1, =1000000
 	mov r0, #2
@@ -20,5 +20,5 @@ push {ip, lr}			@ save link register as we will re-use it here
 	ldr r0, =fmtstring
 	bl printf
 
-pop {ip, lr}			@ get original values for return to shell
+pop {lr}			@ get original values for return to shell
 bx lr
